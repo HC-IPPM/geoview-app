@@ -1,0 +1,109 @@
+{
+  "map": {
+    "interaction": "dynamic",
+    "viewSettings": {
+      "projection": 3978,
+      "zoomAndCenter": [4, [-100, 60]]
+    },
+    "basemapOptions": {
+      "basemapId": "transport",
+      "shaded": true,
+      "labeled": true
+    },
+    "listOfGeoviewLayerConfig": [
+      {
+        "geoviewLayerId": "esriDynamicEnergy",
+        "geoviewLayerName": "Energy",
+        "metadataAccessPath": "https://maps-cartes.ec.gc.ca/arcgis/rest/services/CESI/MapServer",
+        "geoviewLayerType": "esriDynamic",
+        "listOfLayerEntryConfig": [{ "layerId": "0" }, { "layerId": "6" }]
+      },
+      {
+        "geoviewLayerId": "wmsEarthquakes",
+        "geoviewLayerName": "Earthquakes",
+        "metadataAccessPath": "https://maps-cartes.services.geo.ca/server_serveur/services/NRCan/earthquakes_en/MapServer/WMSServer",
+        "geoviewLayerType": "ogcWms",
+        "listOfLayerEntryConfig": [
+          {
+            "layerId": "0",
+            "layerName": "Earthquakes"
+          }
+        ]
+      }, 
+      {
+        "geoviewLayerId": "toronto_points",
+        "geoviewLayerName": "Toronto Points",
+        "metadataAccessPath": "./data/toronto_points.metadata.meta",
+        "geoviewLayerType": "GeoJSON",
+        "listOfLayerEntryConfig": [
+          {
+            "layerId": "toronto_points.geojson",
+            "layerName": "Toronto Points"
+          }
+        ]
+      }, 
+      {
+        "geoviewLayerId": "geojsonLYR1",
+        "geoviewLayerName": "GeoJSON Sample",
+        "metadataAccessPath": "https://canadian-geospatial-platform.github.io/geoview/public/datasets/geojson/metadata.meta",
+        "geoviewLayerType": "GeoJSON",
+        "listOfLayerEntryConfig": [
+          {
+            "layerId": "polygons.json",
+            "layerName": "Polygons"
+          },
+          {
+            "layerId": "lines.json",
+            "layerName": "Lines"
+          },
+          {
+            "entryType": "group",
+            "layerId": "point-feature-group",
+            "layerName": "point-feature-group",
+            "listOfLayerEntryConfig": [
+              {
+                "layerId": "icon_points.json",
+                "layerName": "Icons",
+                "initialSettings": { "states": { "visible": false } }
+              },
+              {
+                "layerId": "points.json",
+                "layerName": "Points"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "theme": "geo.ca",
+  "components": [
+    "north-arrow",
+    "overview-map",
+    "legend",
+    "layer-list",
+    "geolocator",
+    "export",
+    "app-bar",
+    "map-nav",
+    "details-panel"
+  ],
+  "appBar": {
+    "tabs": {
+      "core": [
+        "geolocator",
+         "export", 
+         "geochart", 
+         "details", 
+         "legend", 
+         "data-table", 
+         "layers"
+      ]
+    }
+  },
+  "footerBar": {
+    "tabs": {
+      "core": ["time-slider"]
+    }
+  }
+}

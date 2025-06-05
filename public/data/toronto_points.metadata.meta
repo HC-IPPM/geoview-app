@@ -1,0 +1,69 @@
+{
+  "schemaVersionUsed": "1,0",
+  "copyrightText": "© His Majesty the King in Right of Canada, as represented by the Minister of Natural Resources",
+  "listOfLayerEntryConfig": [
+    {
+      "layerId": "toronto_points.geojson",
+      "layerName": "Toronto Points",
+      "source": {
+        "featureInfo": {
+          "queryable": false,
+          "nameField": "other_property",
+          "outfields": [
+            {
+              "name": "weight",
+              "alias": "Weight",
+              "type": "number",
+              "domain": null
+            },
+            {
+              "name": "other_property",
+              "alias": "Category",
+              "type": "string",
+              "domain": null
+            }
+          ]
+        }
+      },
+      "layerStyle": {
+        "Point": {
+          "type": "uniqueValue",
+          "fields": ["other_property"],
+          "hasDefault": true,
+          "info": [
+            {
+              "label": "Category D",
+              "visible": true,
+              "values": ["D"],
+              "settings": {
+                "type": "simpleSymbol",
+                "symbol": "circle",
+                "color": "rgba(255,0,0,0.6)"
+              }
+            },
+            {
+              "label": "Category B",
+              "visible": true,
+              "values": ["B"],
+              "settings": {
+                "type": "simpleSymbol",
+                "symbol": "triangle",
+                "color": "rgba(0,255,0,0.6)"
+              }
+            },
+            {
+              "label": "Other",
+              "visible": true,
+              "values": [],
+              "settings": {
+                "type": "simpleSymbol",
+                "symbol": "circle",
+                "color": "rgba(128,128,128,0.6)"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

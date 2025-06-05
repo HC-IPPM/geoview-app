@@ -1,0 +1,34 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+k8s/geocoder/rate-limit/test_rate_limiting.sh
+k8s/flux-system/alerts/alerts-secret.yaml
+test-gcs-connection.yaml
+NLFD_test.csv
+**/node_modules
+**/axe-results
+**/**.env
+**/coverage
+**/**server.pid

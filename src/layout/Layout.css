@@ -1,0 +1,48 @@
+.skip-to-content-link {
+  position: absolute;
+  transform: translate(-50%, -1000%);
+  transition: transform 0.3s;
+  background-color: rgb(38, 55, 74);
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 5px;
+  text-align: center;
+  z-index: -1; /* Keeps it out of focus when not focused */
+}
+
+.skip-to-content-link:focus {
+  top: 10px;
+  transform: translate(-50%, 0%); /* Moves it on-screen  */
+  z-index: 501; /* Brings it to the front */
+}
+
+/* Space fix under header
+body.landing-page gcds-header {
+  display: block;
+  position: relative;
+  z-index: 10;
+}
+
+/* Ensure map starts just below the header */
+/* body.landing-page #main-content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  height: calc(100vh - 120px); 
+  box-sizing: border-box;
+} */
+
+/* body.landing-page,
+body.landing-page html {
+  margin: 0 !important;
+  padding: 0 !important;
+} */
+
+/* Optional: visually hide screen reader region */
+/* .visually-hidden {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+} */ 
