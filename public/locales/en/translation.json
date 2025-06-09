@@ -1,0 +1,43 @@
+{
+    "menu": {
+      "home": "Home",
+      "contactUs": "Contact Us",
+      "skipNav": "Skip to main content"
+    },
+    "pages": {
+      "contactUs": {
+        "title": "Contact Us",
+        "subTitle": "We’d love to hear from you. Please fill out the form below.",
+        "formTitle": "Contact Form",
+        "name": "Name",
+        "email": "Email",
+        "subject": {
+          "title": "Subject",
+          "hintMessage": "Please choose the most relevant topic.",
+          "feedback" : "Feedback",
+          "bug" : "Bug",
+          "inquire" : "Question",
+          "helpOption" : "Help Option", 
+          "followingUp": "Following Up"
+        },
+        "message": "Message",
+        "submitButton": "Submit"
+      },
+      "landing": {
+        "disclaimer": "Disclaimer: This is a proof of concept."
+      }
+    },
+    "footer": {
+      "additionalNav": "Additional Navigation",
+      "resultsExplained": "Other Tricks and Tips",
+      "faq": "Frequently Asked Questions"
+    },
+    "breadcrumbs": {
+      "home": "Home",
+      "contactUs": "Contact Us"
+    },
+    "map": {
+      "title": "Toronto Points Map"
+    }
+  }
+  

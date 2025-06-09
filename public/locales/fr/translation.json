@@ -1,0 +1,42 @@
+{
+  "menu": {
+    "home": "Accueil",
+    "contactUs": "Nous joindre",
+    "skipNav": "Passer au contenu principal"
+  },
+  "pages": {
+    "contactUs": {
+      "title": "Nous joindre",
+      "subTitle": "Nous aimerions avoir de vos nouvelles. Veuillez remplir le formulaire ci-dessous.",
+      "formTitle": "Formulaire de contact",
+      "name": "Nom",
+      "email": "Courriel",
+      "subject": {
+        "title": "Sujet",
+        "hintMessage": "Veuillez choisir le sujet le plus pertinent.",
+        "feedback": "Commentaires",
+        "bug": "Bogue",
+        "inquire": "Question",
+        "helpOption": "Option d’aide", 
+        "followingUp": "Suivi"
+      },
+      "message": "Message",
+      "submitButton": "Soumettre"
+    },
+    "landing": {
+      "disclaimer": "Avertissement : Ceci est une preuve de concept."
+    }
+  },
+  "footer": {
+    "additionalNav": "Navigation supplémentaire",
+    "resultsExplained": "Autres trucs et astuces",
+    "faq": "Foire aux questions"
+  },
+  "breadcrumbs": {
+    "home": "Accueil",
+    "contactUs": "Nous joindre"
+  },
+  "map": {
+    "title": "Carte des points de Toronto"
+  }
+}
