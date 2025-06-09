@@ -1,0 +1,112 @@
+{
+  "schemaVersionUsed": "1,0",
+  "copyrightText": "© His Majesty the King in Right of Canada, as represented by the Minister of Natural Resources",
+  "listOfLayerEntryConfig": [
+    {
+      "layerId": "ottawa_polygons.geojson",
+      "layerName": "Ottawa Polygons",
+      "source": {
+        "featureInfo": {
+          "queryable": true,
+          "nameField": "id",
+          "outfields": [
+            { "name": "id", "alias": "Polygon ID", "type": "string", "domain": null },
+            { "name": "area_sq_km", "alias": "Area (sq km)", "type": "number", "domain": null },
+            { "name": "zone", "alias": "Zone", "type": "string", "domain": null },
+            { "name": "density", "alias": "Density", "type": "number", "domain": null },
+            { "name": "developed", "alias": "Developed", "type": "boolean", "domain": null }
+          ]
+        }
+      },
+      "layerStyle": {
+        "Polygon": {
+          "type": "uniqueValue",
+          "fields": ["zone"],
+          "hasDefault": true,
+          "info": [
+            {
+              "label": "Residential",
+              "visible": true,
+              "values": ["residential"],
+              "settings": {
+                "type": "filledPolygon",
+                "color": "rgba(135,206,250,0.5)",
+                "paternSize": 10,
+                "paternWidth": 2,
+                "fillStyle": "solid",
+                "stroke": {
+                  "color": "rgba(0,0,0,1)",
+                  "lineStyle": "solid"
+                }
+              }
+            },
+            {
+              "label": "Industrial",
+              "visible": true,
+              "values": ["industrial"],
+              "settings": {
+                "type": "filledPolygon",
+                "color": "rgba(255,165,0,0.5)",
+                "paternSize": 10,
+                "paternWidth": 2,
+                "fillStyle": "solid",
+                "stroke": {
+                  "color": "rgba(80,80,80,1)",
+                  "lineStyle": "solid"
+                }
+              }
+            },
+            {
+              "label": "Commercial",
+              "visible": true,
+              "values": ["commercial"],
+              "settings": {
+                "type": "filledPolygon",
+                "color": "rgba(220,20,60,0.5)",
+                "paternSize": 10,
+                "paternWidth": 2,
+                "fillStyle": "solid",
+                "stroke": {
+                  "color": "rgba(80,80,80,1)",
+                  "lineStyle": "solid"
+                }
+              }
+            },
+            {
+              "label": "Park",
+              "visible": true,
+              "values": ["park"],
+              "settings": {
+                "type": "filledPolygon",
+                "color": "rgba(60,179,113,0.5)",
+                "paternSize": 10,
+                "paternWidth": 2,
+                "fillStyle": "solid",
+                "stroke": {
+                  "color": "rgba(34,139,34,1)",
+                  "lineStyle": "solid"
+                }
+              }
+            },
+            {
+              "label": "Other zones",
+              "visible": true,
+              "values": [],
+              "settings": {
+                "type": "filledPolygon",
+                "color": "rgba(192,192,192,0.5)",
+                "paternSize": 10,
+                "paternWidth": 2,
+                "fillStyle": "diagonalCross",
+                "stroke": {
+                  "color": "rgba(128,128,128,1)",
+                  "lineStyle": "dot"
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
