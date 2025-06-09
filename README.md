@@ -1,8 +1,12 @@
 # GeoView App
 
-Looking at using NRCAN's geospatial tool. (https://github.com/Canadian-Geospatial-Platform/geoview)
+Assesing the use NRCAN's geospatial tool for our use cases. (https://github.com/Canadian-Geospatial-Platform/geoview).
 
-##TODO insert image
+We've imbeded the map into a React App to maintain GoC look and feel. It can be viewed here: https://geoview-app-30926324358.northamerica-northeast1.run.app
+
+![Screenshot of geoview app](./images/geoview_toronto.png)
+
+Use the menus on the side and bottom to explore - adding and manipulating layers. The current map has polygons and points primarily in the Toronto and Ottawa areas and you will need to zoom in to see them more clearly. 
 
 ## To run locally: 
 
@@ -11,23 +15,44 @@ npm install
 npm run dev
 ```
 
-## Run in docker: 
+## Run with docker: 
 
 ```
-tbc
+docker build -t geoview-app .
+docker run --rm -p=8080:8080 geoview-app
 ```
 
-## Add Data from config file: 
+## Add Data (programatically): 
 
-```
-tbc
-```
+[./public/data/](./public/data/)
+
+If adding geojson data, we will need both the geojson data file as well as a corresponding metadata.meta file to outline styling and labels. (See [./public/data/sample-geojson.metadata.meta](./public/data/sample-geojson.metadata.meta) for examples). 
+
+## Adjust the map configuration:
+
+Change how the map, layers and menus render: 
+
+[./public/config/sample-config.json](./public/config/sample-config.json)
+
+Currently this also includes some samples from the GeoView GitHub repository.
+
 
 ## To Deploy: 
 
 ```
-tbc
+gcloud builds submit --config cloudbuild.yaml
 ```
+
+## Helpful links: 
+
+- https://github.com/Canadian-Geospatial-Platform/geoview/blob/a2d8d0e26198a8469b7c0dbb226d6964b40cbc57/docs/app/geoview-layer/map-config/README.md#L4
+- https://github.com/cds-snc/gcds-components/blob/main/packages/vue/README.md
+
+## Reponse to below
+1a - layers can be loaded, but not styled client side (but can be with config files)
+2 - max min can be configured in the codebase, but not in the UI
+3 - clustering needs to be explored further
+
 
 ## From Zachary's notes
 
