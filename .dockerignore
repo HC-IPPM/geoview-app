@@ -1,0 +1,12 @@
+node_modules
+.cache
+.temp
+.vscode
+.DS_Store
+.github
+*.log
+README.md
+security.md
+LICENSE.md
+CONTRIBUTING.md
+cloudbuild.yaml
