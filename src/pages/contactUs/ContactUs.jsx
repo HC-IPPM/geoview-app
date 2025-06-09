@@ -32,7 +32,7 @@ export default function ContactUs() {
       formData.name && formData.email && formData.subject && formData.message;
 
     if (isValid) {
-      const mailtoLink = `mailto:Geordin.Raganold@hc-sc.gc.ca?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+      const mailtoLink = `mailto:Someone.WillHelpYou@hc-sc.gc.ca?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
         `${t('pages.contactUs.name')}:\n${formData.name}\n\n${t('pages.contactUs.email')}:\n${formData.email}\n\n${t('pages.contactUs.subject.title')}:\n${formData.subject}\n\n${t('pages.contactUs.message')}:\n${formData.message}`,
       )}`;
 
@@ -67,8 +67,8 @@ export default function ContactUs() {
         <div>
           <GcdsText characterLimit="false">
             {t('pages.contactUs.subTitle')}{' '}
-            <a href="mailto:Geordin.Raganold@hc-sc.gc.ca">
-              Geordin.Raganold@hc-sc.gc.ca
+            <a href="mailto:Someone.WillHelpYou@hc-sc.gc.ca">
+            Someone.WillHelpYou@hc-sc.gc.ca
             </a>
             .
           </GcdsText>
