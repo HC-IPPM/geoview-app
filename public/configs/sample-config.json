@@ -3,7 +3,9 @@
     "interaction": "dynamic",
     "viewSettings": {
       "projection": 3978,
-      "zoomAndCenter": [4, [-100, 60]]
+      "zoomAndCenter": [4, [-100, 60]],
+      "minZoom": 1,
+      "maxZoom": 50
     },
     "basemapOptions": {
       "basemapId": "transport",
@@ -12,27 +14,15 @@
     },
     "listOfGeoviewLayerConfig": [
       {
-        "geoviewLayerId": "esriDynamicEnergy",
-        "geoviewLayerName": "Energy",
-        "metadataAccessPath": "https://maps-cartes.ec.gc.ca/arcgis/rest/services/CESI/MapServer",
-        "geoviewLayerType": "esriDynamic",
-        "listOfLayerEntryConfig": [{ "layerId": "0" }, { "layerId": "6" }]
-      },
-      {
-        "geoviewLayerId": "wmsEarthquakes",
-        "geoviewLayerName": "Earthquakes",
-        "metadataAccessPath": "https://maps-cartes.services.geo.ca/server_serveur/services/NRCan/earthquakes_en/MapServer/WMSServer",
-        "geoviewLayerType": "ogcWms",
-        "listOfLayerEntryConfig": [
-          {
-            "layerId": "0",
-            "layerName": "Earthquakes"
-          }
-        ]
-      }, 
-      {
         "geoviewLayerId": "toronto_points",
         "geoviewLayerName": "Toronto Points",
+        "initialSettings": {
+          "states": {
+            "visible": true
+          }, 
+          "minZoom": 3, 
+          "maxZoom": 10 
+        },
         "metadataAccessPath": "./data/toronto_points.metadata.meta",
         "geoviewLayerType": "GeoJSON",
         "listOfLayerEntryConfig": [
@@ -42,11 +32,84 @@
           }
         ]
       }, 
+
+      {
+        "geoviewLayerId": "ottawa_polygons",
+        "geoviewLayerName": "Ottawa Polygons Example",
+        "initialSettings": {
+          "states": {
+            "visible": true
+          }
+        },
+        "metadataAccessPath": "./data/ottawa_polygons.metadata.meta",
+        "geoviewLayerType": "GeoJSON",
+        "listOfLayerEntryConfig": [
+          {
+            "layerId": "ottawa_polygons.geojson",
+            "layerName": "Ottawa Polygon Example"
+          }
+        ]
+      }, 
+
+      {
+        "geoviewLayerId": "h3_hexagons",
+        "geoviewLayerName": "H3 Hexagons Example",
+        "initialSettings": {
+          "states": {
+            "visible": true
+          }
+        },
+        "metadataAccessPath": "./data/h3_hexagons.metadata.meta",
+        "geoviewLayerType": "GeoJSON",
+        "listOfLayerEntryConfig": [
+          {
+            "layerId": "h3_hexagons.geojson",
+            "layerName": "h3 Hexagons Example"
+          }
+        ]
+      }, 
+
+      {
+        "geoviewLayerId": "esriDynamicEnergy",
+        "geoviewLayerName": "Energy",
+        "initialSettings": {
+          "states": {
+            "visible": false
+          }
+        },
+        "metadataAccessPath": "https://maps-cartes.ec.gc.ca/arcgis/rest/services/CESI/MapServer",
+        "geoviewLayerType": "esriDynamic",
+        "listOfLayerEntryConfig": [{ "layerId": "0" }, { "layerId": "6" }]
+      },
+      {
+        "geoviewLayerId": "wmsEarthquakes",
+        "geoviewLayerName": "Earthquakes",
+        "initialSettings": {
+          "states": {
+            "visible": false
+          }
+        },
+        "metadataAccessPath": "https://maps-cartes.services.geo.ca/server_serveur/services/NRCan/earthquakes_en/MapServer/WMSServer",
+        "geoviewLayerType": "ogcWms",
+        "listOfLayerEntryConfig": [
+          {
+            "layerId": "0",
+            "layerName": "Earthquakes"
+          }
+        ]
+      }, 
+
+
       {
         "geoviewLayerId": "geojsonLYR1",
-        "geoviewLayerName": "GeoJSON Sample",
         "metadataAccessPath": "https://canadian-geospatial-platform.github.io/geoview/public/datasets/geojson/metadata.meta",
         "geoviewLayerType": "GeoJSON",
+        "initialSettings": {
+          "states": {
+            "visible": false
+          }
+        },
+        "geoviewLayerName": "geojsonLYR1",
         "listOfLayerEntryConfig": [
           {
             "layerId": "polygons.json",
@@ -79,14 +142,7 @@
   "theme": "geo.ca",
   "components": [
     "north-arrow",
-    "overview-map",
-    "legend",
-    "layer-list",
-    "geolocator",
-    "export",
-    "app-bar",
-    "map-nav",
-    "details-panel"
+    "overview-map"
   ],
   "appBar": {
     "tabs": {
@@ -95,15 +151,21 @@
          "export", 
          "geochart", 
          "details", 
+         "guide",
          "legend", 
-         "data-table", 
-         "layers"
+         "data-table"
       ]
     }
   },
+
   "footerBar": {
     "tabs": {
-      "core": ["time-slider"]
+      "core": [
+              "time-slider", 
+              "legend", 
+              "layers", 
+              "data-table", 
+              "details"]
     }
   }
 }
