@@ -7,20 +7,22 @@
       "layerName": "Toronto Points",
       "source": {
         "featureInfo": {
-          "queryable": false,
+          "queryable": true,
           "nameField": "other_property",
+          "fields": [
+            "weight",
+            "other_property"
+          ],
           "outfields": [
             {
               "name": "weight",
               "alias": "Weight",
-              "type": "number",
-              "domain": null
+              "type": "number"
             },
             {
               "name": "other_property",
               "alias": "Category",
-              "type": "string",
-              "domain": null
+              "type": "string"
             }
           ]
         }
@@ -32,13 +34,13 @@
           "hasDefault": true,
           "info": [
             {
-              "label": "Category D",
+              "label": "Category A",
               "visible": true,
-              "values": ["D"],
+              "values": ["A"],
               "settings": {
                 "type": "simpleSymbol",
                 "symbol": "circle",
-                "color": "rgba(255,0,0,0.6)"
+                "color": "rgba(0,0,255,0.6)"
               }
             },
             {
@@ -52,8 +54,38 @@
               }
             },
             {
-              "label": "Other",
+              "label": "Category C",
               "visible": true,
+              "values": ["C"],
+              "settings": {
+                "type": "simpleSymbol",
+                "symbol": "square",
+                "color": "rgba(255,165,0,0.6)"
+              }
+            },
+            {
+              "label": "Category D",
+              "visible": true,
+              "values": ["D"],
+              "settings": {
+                "type": "simpleSymbol",
+                "symbol": "circle",
+                "color": "rgba(255,0,0,0.6)"
+              }
+            },
+            {
+              "label": "Category E",
+              "visible": true,
+              "values": ["E"],
+              "settings": {
+                "type": "simpleSymbol",
+                "symbol": "star",
+                "color": "rgba(128,0,128,0.6)"
+              }
+            },
+            {
+              "label": "Other",
+              "visible": false,
               "values": [],
               "settings": {
                 "type": "simpleSymbol",
