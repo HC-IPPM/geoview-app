@@ -1,0 +1,51 @@
+steps:
+  - id: build-docker-image
+    name: 'gcr.io/cloud-builders/docker@sha256:b991d50960b337f581ad77ea2a59259a786d177019aa64d8b3acb01f65dbc154'
+    args:
+      - 'build'
+      - '-t'
+      - 'northamerica-northeast1-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/$_IMAGE_NAME'
+      - '.'
+
+  - id: push-docker-image-to-artifact-registry
+    name: 'gcr.io/cloud-builders/docker@sha256:b991d50960b337f581ad77ea2a59259a786d177019aa64d8b3acb01f65dbc154'
+    args:
+      - 'push'
+      - 'northamerica-northeast1-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/$_IMAGE_NAME'
+
+  - id: deploy-cloudrun
+    name: 'gcr.io/google.com/cloudsdktool/cloud-sdk@sha256:3a24ff5f089d9ce3627306873ef1e1061488a63ae12c0bd0b5c24ec5ee594798'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        gcloud run deploy geoview-app \
+          --image=northamerica-northeast1-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/$_IMAGE_NAME \
+          --region=northamerica-northeast1 \
+          --platform=managed \
+          --memory 2Gi \
+          --cpu 2 \
+          --allow-unauthenticated \
+          --timeout 800s
+
+
+substitutions:
+  _REPO_NAME: spatial-analysis-tool-repo
+  _IMAGE_NAME: geoview:latest
+
+# https://cloud.google.com/build/docs/build-config-file-schema#options
+# https://cloud.google.com/build/docs/optimize-builds/increase-vcpu-for-builds
+# options:
+  # machineType: "E2_HIGHCPU_32" # or E2_HIGHCPU_32
+  # diskSizeGb: '200'
+
+
+# gcloud builds submit --config cloudbuild.yaml
+        # gcloud run deploy geoview \
+        #   --image=northamerica-northeast1-docker.pkg.dev/phx-01ha4nkwq9/spatial-analysis-tool-repo/geoview:latest \
+        #   --region=northamerica-northeast1 \
+        #   --platform=managed \
+        #   --memory 2Gi \
+        #   --cpu 2 \
+        #   --allow-unauthenticated \
+        #   --timeout 600s 
