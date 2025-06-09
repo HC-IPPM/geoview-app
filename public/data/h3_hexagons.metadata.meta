@@ -1,0 +1,57 @@
+{
+  "schemaVersionUsed": "1.0",
+  "listOfLayerEntryConfig": [
+    {
+      "layerId": "h3_hexagons.geojson",
+      "layerName": "H3 Hexagons",
+      "source": {
+        "featureInfo": {
+          "queryable": true,
+          "nameField": "h3_index",
+          "outfields": [
+            {
+              "name": "avg_weight",
+              "alias": "Average Weight",
+              "type": "number",
+              "domain": null
+            },
+            {
+              "name": "h3_index",
+              "alias": "H3 Index",
+              "type": "string",
+              "domain": null
+            }, 
+            {     
+              "name": "point_count",
+              "alias": "Point Count",
+              "type": "number",
+              "domain": null
+            }
+          ]
+        }
+      },
+
+      "style": {
+            "Polygon": {
+              "type": "simple",
+              "hasDefault": false,
+              "fields": [],
+                "info": [
+            {
+              "label": "Hexagon",
+              "visible": true,
+              "settings": {
+                "type": "filledPolygon",
+                "color": "rgba(0, 150, 200, 0.3)",
+                "stroke": {
+                  "color": "rgba(0, 100, 150, 1)",
+                  "lineStyle": "solid"
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
